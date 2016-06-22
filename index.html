@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Psyche</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/1.8.2/plyr.css">
+  <style type="text/css">
+    .video-player {
+      width: 720px;
+      height: 480px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h1>Project Psyche</h1>
+    <a href="#" data-type="youtube" data-video-id="Ml-rxMwcaf0">The Insiders</a>
+    <a href="#" data-type="youtube" data-video-id="oNEsgEkkILw">Algorithm</a>
+  </div>
+  <div class="video-player">
+    <div class="psyche-machine" data-type="youtube" data-video-id="Ml-rxMwcaf0"></div>
+  </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.4.2/localforage.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/1.8.2/plyr.js"></script>
+<script type="text/javascript">
+  /**
+    Goals:
+      - Track user behavior via localforage
+        - use this to grey out videos that are viewed past 90% threshold
+        - resume a video where you left off.
+  */
+  var player = plyr.setup('.psyche-machine')[0]
+  var p = player.plyr
+  var videos = [
+    {title: "The Insiders", id: "Ml-rxMwcaf0"},
+    {title: "Algorithm", id: "oNEsgEkkILw"}
+  ]
+  var currentVideo = "Ml-rxMwcaf0"
+
+  player.addEventListener('ready', function(event) {
+    console.log("READY")
+    localforage.getItem(currentVideo).then(function(value) {
+      console.log("SEEK", currentVideo, value)
+      p.seek(value.currentPosition)
+      p.play()
+    })
+  })
+
+  player.addEventListener('timeupdate', function(event) {
+    var ct = Math.floor(p.media.currentTime)
+    var metadata = {currentPosition: ct, duration: p.media.duration}
+    localforage.setItem(currentVideo, metadata)
+    console.log("SAVE", currentVideo, metadata)
+  })
+
+  function loadVideo(provider, ID) {
+    currentVideo = ID
+    p.source({
+      type: 'video',
+      title: 'Test',
+      sources: [{
+        src: currentVideo,
+        type: provider
+      }]
+    })
+  }
+  // WIP: Making cards showing watch progress
+  // for (var x = 0; x < videos.length; x++) {
+  //   var d = document.createElement("div")
+  //   d.className = "link-box"
+  //   "<div>" +
+  //     "<div class='progress' style='width:
+  //     The Insiders
+  //   "</div>"
+  //   d.innerHTML = videos[x].title
+  //   document.querySelector('.sidebar').appendChild("wow")
+  // }
+  var links = document.querySelectorAll('.sidebar a')
+
+  for (var x = 0; x < links.length; x++) {
+    localforage.getItem(links[x].getAttribute("data-video-id")).then(function(link, obj) {
+      link.innerHTML = link.innerHTML + " (" + Math.round(obj.currentPosition / obj.duration * 100) + "%)"
+    }.bind(this, links[x]))
+
+
+    links[x].addEventListener('click', function(event) {
+      loadVideo(event.target.getAttribute("data-type"), event.target.getAttribute("data-video-id"))
+      return false
+    })
+  }
+
+</script>
+</body>
+</html>
