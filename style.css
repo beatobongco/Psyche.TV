@@ -1,0 +1,128 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  overflow: hidden;
+}
+html,
+body,
+.container,
+.sidebar {
+  height: 100%;
+}
+.container {
+  font-family: Roboto;
+  display: flex;
+}
+.container .sidebar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: none;
+  padding: 0 10px;
+  background-color: black;
+}
+.container .sidebar .video-card {
+  display: table;
+  position: relative;
+  width: 300px;
+  height: 130px;
+  margin: 10px 0;
+  color: #fff;
+  background-color: #212121;
+}
+.container .sidebar .video-card:hover {
+  opacity: .75;
+  cursor: pointer;
+}
+.container .sidebar .video-card .progress {
+  position: absolute;
+  background-color: #c0392b;
+  height: 5%;
+}
+.container .sidebar .video-card .watched {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding-top: 60px;
+  color: #ecf0f1;
+  font-size: 12px;
+  font-weight: 600;
+}
+.container .sidebar .video-card .img-container {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+  background-color: black;
+}
+.container .sidebar .video-card img {
+  max-width: 100%;
+}
+.container .sidebar .video-card .info {
+  padding-left: 10px;
+  width: 50%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.container .sidebar .video-card .info h3 {
+  font-weight: 400;
+  font-size: 14px;
+  margin: 5px 0;
+}
+.container .sidebar .video-card .info p {
+  font-weight: 300;
+  font-size: 12px;
+  margin: 5px 0;
+}
+.container .sidebar .video-card .info strong {
+  font-weight: 500;
+  font-size: 10px;
+  margin: 5px 0;
+}
+.container .video-player {
+  padding: 10px;
+  flex: 1;
+  background-color: black;
+  color: #fff;
+}
+.logo-container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: black;
+}
+.logo-container h1 {
+  font-weight: 300;
+  font-size: 60px;
+  margin: 5px;
+}
+.logo-container .logo {
+  background-image: url(img/logo.png);
+  width: 64px;
+  height: 64px;
+}
+.plyr__play-large {
+  background: rgba(0, 0, 0, 0);
+}
+.plyr__progress--played,
+.plyr__volume--display {
+  color: #fff;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #303030;
+}

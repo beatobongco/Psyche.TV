@@ -1,91 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project Psyche</title>
+  <title>Psyche.TV</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/1.8.2/plyr.css">
-  <style type="text/css">
-    html {
-      box-sizing: border-box;
-    }
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
-    .container {
-      display: flex;
-    }
-    .sidebar {
-      flex: none;
-      padding: 0 10px;
-    }
-    .video-player {
-      flex: 1;
-      width: 720px;
-      height: 480px;
-    }
-    .video-card {
-      display: table;
-      position: relative;
-      width: 300px;
-      height: 130px;
-      margin: 10px 0;
-      color: #2c3e50;
-      background-color: #ecf0f1;
-    }
-    .video-card:hover {
-      opacity: .75;
-      cursor: pointer;
-    }
-    .video-card .watched {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      z-index: 100;
-      background-color: rgba(0, 0, 0, .5);
-      text-align: center;
-      padding-top: 60px;
-      color: #ecf0f1;
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .video-card .img-container {
-      display: table-cell;
-      vertical-align: middle;
-      width: 50%;
-      background-color: black;
-    }
-    .video-card img {
-      max-width: 100%;
-    }
-    .video-card .info {
-      padding-left: 10px;
-      width: 50%;
-      display: table-cell;
-      vertical-align: middle;
-    }
-    .video-card .info h3 {
-      font-size: 14px;
-      margin: 5px 0;
-    }
-    .video-card .info p {
-      font-size: 12px;
-      margin: 5px 0;
-    }
-    .video-card .info strong {
-      font-size: 10px;
-      margin: 5px 0;
-    }
-    .progress {
-      position: absolute;
-      background-color: #c0392b;
-      height: 5%;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="container">
+    <div class="video-player">
+      <div class="logo-container">
+        <div class="logo"></div>
+        <h1>Psyche.TV</h1>
+      </div>
+      <div class="psyche-machine" data-type="youtube" data-video-id="Ml-rxMwcaf0"></div>
+    </div>
     <div class="sidebar">
-      <h1>Psyche.TV</h1>
       <div class="video-list">
         {{ progress }}
         <div class="video-card" v-for="(index, item) in items" v-on:click="loadVideo(item)">
@@ -102,15 +33,13 @@
         </div>
       </div>
     </div>
-    <div class="video-player">
-      <div class="psyche-machine" data-type="youtube" data-video-id="Ml-rxMwcaf0"></div>
-    </div>
   </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.4.2/localforage.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/1.8.2/plyr.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+<script type="text/javascript" src="videos.js"></script>
 <script type="text/javascript">
   /**
     Goals:
@@ -120,43 +49,35 @@
   */
 
   var videosData = [] //this is my state
-  var videos = [
-    {
-      id: "Ml-rxMwcaf0",
-      title: "The Insiders",
-      type: "youtube",
-      description: "Indoor climbing featuring well-known rock stars."
-    },
-    {
-      id: "oNEsgEkkILw",
-      title: "Algorithm",
-      type: "youtube",
-      description: "Jonathan Siegrist."
-    },
-    {
-      id: "97907181",
-      title: "Denali",
-      type: "vimeo",
-      description: "Test"
-    }
-  ]
   var currentVideo = { id: videos[0].id, type: videos[0].type, watched: false }
+  var player_container = null
+  var p = null
 
-  //Load last. If none, just use default.
-  localforage.getItem("lastVideo").then(function(data) {
-    if (data) {
-      currentVideo.id = data.id
-      currentVideo.type = data.type
-      currentVideo.watched = data.watched
-    }
+  function $(s) {
+    return document.querySelector(s)
+  }
 
-    document.querySelector(".psyche-machine").setAttribute("data-type", currentVideo.type)
-    document.querySelector(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
+  function retrieveLastVideo() {
+    //retrieves last video played and instantiates plyr
+    localforage.getItem("lastVideo").then(function(data) {
+      if (data) {
+        currentVideo.id = data.id
+        currentVideo.type = data.type
+        currentVideo.watched = data.watched
+      }
 
-    var player = plyr.setup('.psyche-machine')[0]
-    var p = player.plyr
+      $(".psyche-machine").setAttribute("data-type", currentVideo.type)
+      $(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
 
-    player.addEventListener('ready', function(event) {
+      setupPlyr()
+    })
+  }
+
+  function setupPlyr() {
+    player_container = plyr.setup('.psyche-machine')[0]
+    p = player_container.plyr
+
+    player_container.addEventListener('ready', function(event) {
       console.log("READY: Loading", currentVideo.id)
       localforage.getItem(currentVideo.id).then(function(value) {
         if (value) {
@@ -166,7 +87,7 @@
       })
     })
 
-    player.addEventListener('ended', function(event) {
+    player_container.addEventListener('ended', function(event) {
       var duration = p.media.duration
       var metadata = {currentPosition: duration, duration: duration, watched: true}
       localforage.setItem(currentVideo.id, metadata)
@@ -176,7 +97,7 @@
       cv.watched = true
     })
 
-    player.addEventListener('timeupdate', function(event) {
+    player_container.addEventListener('timeupdate', function(event) {
       var ct = Math.floor(p.media.currentTime)
       var duration = p.media.duration
       var metadata = {currentPosition: ct, duration: duration, watched: false}
@@ -187,37 +108,13 @@
       cv.watched = false
     })
 
-    player.addEventListener('play', function(event) {
+    player_container.addEventListener('play', function(event) {
       console.log("SET LAST", currentVideo)
       localforage.setItem("lastVideo", currentVideo)
     })
+  }
 
-    //Load my videos
-    for (var x = 0; x < videos.length; x++) {
-      localforage.getItem(videos[x].id).then(function(video, savedData) {
-        var humanizedDuration = null
-        var currentPosition = 0
-        var duration = null
-        var watched = false
-        if (savedData) {
-          humanizedDuration = moment.duration(savedData.duration, "seconds").humanize()
-          duration = savedData.duration
-          currentPosition = savedData.currentPosition
-          watched = savedData.watched
-        }
-        videosData.push({
-          id: video.id,
-          type: video.type,
-          title: video.title,
-          description: video.description,
-          duration: duration,
-          humanizedDuration: humanizedDuration,
-          currentPosition: currentPosition,
-          watched: watched
-        })
-      }.bind(this, videos[x]))
-    }
-
+  function setupVue() {
     new Vue({
       el: '.video-list',
       data: {
@@ -250,7 +147,43 @@
         }
       }
     })
-  })
+  }
+
+  function loadVideoList() {
+    for (var x = 0; x < videos.length; x++) {
+      localforage.getItem(videos[x].id).then(function(video, savedData) {
+        var humanizedDuration = null
+        var currentPosition = 0
+        var duration = null
+        var watched = false
+        if (savedData) {
+          humanizedDuration = moment.duration(savedData.duration, "seconds").humanize()
+          duration = savedData.duration
+          currentPosition = savedData.currentPosition
+          watched = savedData.watched
+        }
+        videosData.push({
+          id: video.id,
+          type: video.type,
+          title: video.title,
+          description: video.description,
+          duration: duration,
+          humanizedDuration: humanizedDuration,
+          currentPosition: currentPosition,
+          watched: watched
+        })
+      }.bind(this, videos[x]))
+    }
+  }
+
+  function init() {
+    retrieveLastVideo()
+    loadVideoList()
+    setupVue()
+  }
+
+  init()
+
 </script>
 </body>
 </html>
