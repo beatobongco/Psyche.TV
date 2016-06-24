@@ -18,6 +18,7 @@ body,
 .container {
   font-family: Roboto;
   display: flex;
+  background-color: black;
 }
 .container .sidebar {
   overflow-y: auto;
@@ -48,7 +49,7 @@ body,
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 100;
+  z-index: 101;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding-top: 60px;
@@ -87,27 +88,73 @@ body,
   margin: 5px 0;
 }
 .container .video-player {
-  padding: 10px;
+  padding-left: 10px;
   flex: 1;
   background-color: black;
   color: #fff;
+  position: relative;
 }
-.logo-container {
+.container .video-player .logo-container {
   padding: 10px;
-  display: flex;
-  align-items: center;
   color: #fff;
   background-color: black;
 }
-.logo-container h1 {
+.container .video-player .logo-container a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+.container .video-player .logo-container h1 {
   font-weight: 300;
   font-size: 60px;
   margin: 5px;
 }
-.logo-container .logo {
+.container .video-player .logo-container .logo {
   background-image: url(img/logo.png);
   width: 64px;
   height: 64px;
+}
+.container .psyche-meter {
+  background-color: black;
+  text-align: center;
+  position: relative;
+  width: 50px;
+  color: #fff;
+  margin-top: 100px;
+}
+.container .psyche-meter .psyched,
+.container .psyche-meter .weak {
+  margin: 0 auto;
+  position: absolute;
+  font-size: 8px;
+  font-weight: 500;
+  width: 100%;
+}
+.container .psyche-meter .psyched {
+  top: 0;
+}
+.container .psyche-meter .weak {
+  bottom: 10px;
+}
+.container .psyche-meter .psyche-progress {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.container .psyche-meter .psyche-progress .climber {
+  width: 32px;
+  height: 32px;
+  z-index: 100;
+}
+.container .psyche-meter .psyche-progress .meter {
+  position: absolute;
+  top: 19px;
+  left: 23px;
+  background-color: #c0392b;
+  width: 3px;
+  margin: 0 auto;
+  height: 100%;
 }
 .plyr__play-large {
   background: rgba(0, 0, 0, 0);
@@ -118,6 +165,7 @@ body,
 }
 ::-webkit-scrollbar {
   width: 10px;
+  margin-right: 5px;
 }
 ::-webkit-scrollbar-track {
   background-color: #000;

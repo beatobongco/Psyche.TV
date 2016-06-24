@@ -9,16 +9,25 @@
 </head>
 <body>
   <div class="container">
+    <div class="psyche-meter">
+      <div class="psyched">PSYCHED</div>
+      <div class="psyche-progress" style="height: {{ psychePercent }}%">
+        <img class="climber" src="img/climber.png">
+        <div class="meter"></div>
+      </div>
+      <div class="weak">MEH</div>
+    </div>
     <div class="video-player">
       <div class="logo-container">
-        <div class="logo"></div>
-        <h1>Psyche.TV</h1>
+        <a href="#">
+          <div class="logo"></div>
+          <h1>Psyche.TV</h1>
+        </a>
       </div>
       <div class="psyche-machine" data-type="youtube" data-video-id="Ml-rxMwcaf0"></div>
     </div>
     <div class="sidebar">
       <div class="video-list">
-        {{ progress }}
         <div class="video-card" v-for="(index, item) in items" v-on:click="loadVideo(item)">
           <div class="watched" v-show="item.watched">WATCHED</div>
           <div class="progress" style="width: {{ Math.round(item.currentPosition / item.duration * 100) }}%"></div>
@@ -39,151 +48,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
-<script type="text/javascript" src="videos.js"></script>
-<script type="text/javascript">
-  /**
-    Goals:
-      - Track user behavior via localforage
-        - use this to grey out videos that are viewed past 90% threshold
-        - resume a video where you left off.
-  */
-
-  var videosData = [] //this is my state
-  var currentVideo = { id: videos[0].id, type: videos[0].type, watched: false }
-  var player_container = null
-  var p = null
-
-  function $(s) {
-    return document.querySelector(s)
-  }
-
-  function retrieveLastVideo() {
-    //retrieves last video played and instantiates plyr
-    localforage.getItem("lastVideo").then(function(data) {
-      if (data) {
-        currentVideo.id = data.id
-        currentVideo.type = data.type
-        currentVideo.watched = data.watched
-      }
-
-      $(".psyche-machine").setAttribute("data-type", currentVideo.type)
-      $(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
-
-      setupPlyr()
-    })
-  }
-
-  function setupPlyr() {
-    player_container = plyr.setup('.psyche-machine')[0]
-    p = player_container.plyr
-
-    player_container.addEventListener('ready', function(event) {
-      console.log("READY: Loading", currentVideo.id)
-      localforage.getItem(currentVideo.id).then(function(value) {
-        if (value) {
-          p.seek(value.currentPosition)
-        }
-        p.play()
-      })
-    })
-
-    player_container.addEventListener('ended', function(event) {
-      var duration = p.media.duration
-      var metadata = {currentPosition: duration, duration: duration, watched: true}
-      localforage.setItem(currentVideo.id, metadata)
-      var cv = _.find(videosData, { id: currentVideo.id })
-      cv.currentPosition = duration
-      cv.duration = duration
-      cv.watched = true
-    })
-
-    player_container.addEventListener('timeupdate', function(event) {
-      var ct = Math.floor(p.media.currentTime)
-      var duration = p.media.duration
-      var metadata = {currentPosition: ct, duration: duration, watched: false}
-      localforage.setItem(currentVideo.id, metadata)
-      var cv = _.find(videosData, { id: currentVideo.id })
-      cv.currentPosition = ct
-      cv.duration = duration
-      cv.watched = false
-    })
-
-    player_container.addEventListener('play', function(event) {
-      console.log("SET LAST", currentVideo)
-      localforage.setItem("lastVideo", currentVideo)
-    })
-  }
-
-  function setupVue() {
-    new Vue({
-      el: '.video-list',
-      data: {
-        currentVideo: currentVideo,
-        items: videosData
-      },
-      methods: {
-        loadVideo: function (item) {
-          currentVideo.id = item.id
-          currentVideo.type = item.type
-          p.source({
-            type: 'video',
-            title: item.title,
-            sources: [{
-              src: item.id,
-              type: item.type
-            }]
-          })
-        }
-      },
-      computed: {
-        progress: function () {
-          var total = 0
-          var consumed = 0
-          _.forEach(this.items, function(value) {
-            consumed += value.currentPosition
-            total += value.duration
-          })
-          return "Watched " + moment.duration(consumed, "seconds").humanize() + " of " + moment.duration(total, "seconds").humanize()
-        }
-      }
-    })
-  }
-
-  function loadVideoList() {
-    for (var x = 0; x < videos.length; x++) {
-      localforage.getItem(videos[x].id).then(function(video, savedData) {
-        var humanizedDuration = null
-        var currentPosition = 0
-        var duration = null
-        var watched = false
-        if (savedData) {
-          humanizedDuration = moment.duration(savedData.duration, "seconds").humanize()
-          duration = savedData.duration
-          currentPosition = savedData.currentPosition
-          watched = savedData.watched
-        }
-        videosData.push({
-          id: video.id,
-          type: video.type,
-          title: video.title,
-          description: video.description,
-          duration: duration,
-          humanizedDuration: humanizedDuration,
-          currentPosition: currentPosition,
-          watched: watched
-        })
-      }.bind(this, videos[x]))
-    }
-  }
-
-  function init() {
-    retrieveLastVideo()
-    loadVideoList()
-    setupVue()
-  }
-
-  init()
-
-</script>
+<script type="text/javascript" src="video_sources.js"></script>
+<script type="text/javascript" src="psyche.js"></script>
 </body>
 </html>
