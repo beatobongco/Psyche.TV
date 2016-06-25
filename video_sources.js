@@ -12,63 +12,9 @@ var videos = [
     description: "2010 Bouldering World Cup competition, Vail, Colorado."
   },
   {
-    id: "oNEsgEkkILw",
-    title: "Algorithm",
+    id: "Phl82D57P58",
+    title: "Alex Honnold - El Sendero Luminoso",
     type: "youtube",
-    description: "Jonathan Siegrist."
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
-  },
-  {
-    id: "97907181",
-    title: "Denali",
-    type: "vimeo",
-    description: "Test"
+    description: "Alex Honnold free-soloing El Sendero Luminoso (The Shining Path) in El Portrero Chico, Mexico."
   }
 ]

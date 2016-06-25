@@ -5,10 +5,11 @@
       - resume a video where you left off.
   TODO:
     - get duration upon play
+    - Make video-player a Vue
 */
 
 var videosData = [] //this is my state
-var currentVideo = { id: videos[0].id, type: videos[0].type, watched: false }
+var currentVideo = { id: videos[0].id, type: videos[0].type, title: videos[0].title, watched: false }
 var player_container = null
 var p = null
 
@@ -19,17 +20,23 @@ function $(s) {
 function sortVideosData() {
   videosData.sort(function(a, b) {
     if (a.watched && b.watched) {
+      if (a.title > b.title) {
+        return 1
+      }
+      else if (a.title < b.title) {
+        return -1
+      }
       return 0
     }
 
     if (a.watched && !b.watched) {
-      return -1
+      return 1
     }
 
     if (!a.watched && b.watched) {
-      return 1
+      return -1
     }
-  }).reverse()
+  })
 }
 
 function retrieveLastVideo() {
@@ -37,6 +44,7 @@ function retrieveLastVideo() {
   localforage.getItem("lastVideo").then(function(data) {
     if (data) {
       currentVideo.id = data.id
+      currentVideo.title = data.title
       currentVideo.type = data.type
       currentVideo.watched = data.watched
     }
@@ -64,7 +72,11 @@ function setupPlyr() {
 
   player_container.addEventListener('ended', function(event) {
     var duration = p.media.duration
-    var metadata = {currentPosition: duration, duration: duration, watched: true}
+    var metadata = {
+      currentPosition: duration,
+      duration: duration,
+      watched: true
+    }
     localforage.setItem(currentVideo.id, metadata)
     var cv = _.find(videosData, { id: currentVideo.id })
     cv.currentPosition = duration
@@ -105,6 +117,8 @@ function setupVue() {
       loadVideo: function (item) {
         currentVideo.id = item.id
         currentVideo.type = item.type
+        currentVideo.title = item.title
+        currentVideo.watched = item.watched
         p.source({
           type: 'video',
           title: item.title,
@@ -133,6 +147,18 @@ function setupVue() {
           total++
         })
         return Math.round(consumed/total * 100)
+      }
+    }
+  })
+
+  new Vue({
+    el: '.video-player',
+    data: {
+      currentVideo: currentVideo
+    },
+    computed: {
+      title: function() {
+        return _.find(videos, { id: currentVideo.id }).title
       }
     }
   })
