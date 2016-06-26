@@ -1,9 +1,4 @@
-/**
-  TODO:
-    - Get vimeo thumbs
-*/
-
-var videosData = [] //this is my state
+var videosData = []
 var currentVideo = { id: videos[0].id, type: videos[0].type, title: videos[0].title, watched: false }
 var player_container = null
 var p = null
