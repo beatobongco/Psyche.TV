@@ -155,11 +155,23 @@ function loadVideoList() {
       var currentPosition = 0
       var duration = null
       var watched = false
+      var thumbnail = ""
+
       if (savedData) {
         humanizedDuration = humanizeDuration(savedData.duration)
         duration = savedData.duration
         currentPosition = savedData.currentPosition
         watched = savedData.watched
+      }
+      if (video.type === "youtube") {
+        thumbnail = "http://img.youtube.com/vi/" + video.id + "/0.jpg"
+      }
+      else if (video.type === "vimeo") {
+        superagent
+          .get("http://vimeo.com/api/v2/video/" + video.id + ".json")
+          .end(function(videoID, err, res) {
+            _.find(videosData, { id: videoID }).thumbnail = res.body[0].thumbnail_medium
+          }.bind(this, video.id))
       }
       videosData.push({
         id: video.id,
@@ -169,7 +181,8 @@ function loadVideoList() {
         duration: duration,
         humanizedDuration: humanizedDuration,
         currentPosition: currentPosition,
-        watched: watched
+        watched: watched,
+        thumbnail: thumbnail
       })
       sortVideosData()
     }.bind(this, videos[x]))

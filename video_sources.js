@@ -16,5 +16,11 @@ var videos = [
     title: "Alex Honnold - El Sendero Luminoso",
     type: "youtube",
     description: "Alex Honnold free-soloing El Sendero Luminoso (The Shining Path) in El Portrero Chico, Mexico."
+  },
+  {
+    id: "104492465",
+    title: "Climbing Mallorca",
+    type: "vimeo",
+    description: "Deep water soloing with a vacation vibe."
   }
 ]

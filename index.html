@@ -6,8 +6,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://beatobongco.com/Psyche.TV/" />
   <meta property="og:image" content="http://beatobongco.com/Psyche.TV/img/climbing_og.png" />
-  <meta property="og:description" content="A smart playlist of climbing videos to keep you psyched!" />
-  <meta name="description" content="A smart playlist of climbing videos to keep you psyched!">
+  <meta property="og:description" content="A smart playlist of climbing videos to keep you psyched! Remembers your watching progress." />
+  <meta name="description" content="A smart playlist of climbing videos to keep you psyched! Remembers your watching progress.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
@@ -40,7 +40,7 @@
           <div class="watched" v-show="item.watched">WATCHED</div>
           <div class="progress" style="width: {{ Math.round(item.currentPosition / item.duration * 100) }}%"></div>
           <div class="img-container">
-            <img src="{{ 'http://img.youtube.com/vi/' + item.id + '/0.jpg' }}">
+            <img src="{{ item.thumbnail }}">
           </div>
           <div class="info">
             <h3>{{ item.title }}</h3>
@@ -59,6 +59,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/superagent/2.0.0/superagent.min.js"></script>
   <script type="text/javascript" src="video_sources.js"></script>
   <script type="text/javascript" src="psyche.js"></script>
 </body>
