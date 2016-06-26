@@ -62,12 +62,12 @@ function setupPlyr() {
   player_container.addEventListener('ready', function(event) {
     console.log("READY: Loading", currentVideo.id)
     localforage.getItem(currentVideo.id).then(function(value) {
-      if (value) {
-        p.seek(value.currentPosition)
-      }
       var cv = _.find(videosData, { id: currentVideo.id })
       cv.humanizedDuration = humanizeDuration(p.media.duration)
-      p.play()
+      if (value) {
+        p.seek(value.currentPosition)
+        p.play()
+      }
     })
   })
 
