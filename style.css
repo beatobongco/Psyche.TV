@@ -13,7 +13,6 @@ html,
 body,
 .container,
 .sidebar {
-  height: 100%;
   background-color: black;
 }
 .container {
@@ -152,7 +151,9 @@ body,
 .container .psyche-meter .psyche-progress {
   position: absolute;
   bottom: 0;
+  padding-top: 10px;
   width: 100%;
+  overflow: hidden;
 }
 .container .psyche-meter .psyche-progress .climber {
   width: 32px;
@@ -161,7 +162,7 @@ body,
 }
 .container .psyche-meter .psyche-progress .meter {
   position: absolute;
-  top: 19px;
+  top: 29px;
   left: 23px;
   background-color: #c0392b;
   width: 3px;

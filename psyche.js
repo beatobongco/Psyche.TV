@@ -1,11 +1,6 @@
 /**
-  Goals:
-    - Track user behavior via localforage
-      - use this to grey out videos that are viewed past 90% threshold
-      - resume a video where you left off.
   TODO:
-    - get duration upon play
-    - Make video-player a Vue
+    - Get vimeo thumbs
 */
 
 var videosData = [] //this is my state
@@ -15,6 +10,10 @@ var p = null
 
 function $(s) {
   return document.querySelector(s)
+}
+
+function humanizeDuration(d) {
+  return moment.duration(d, "seconds").humanize()
 }
 
 function sortVideosData() {
@@ -51,7 +50,7 @@ function retrieveLastVideo() {
 
     $(".psyche-machine").setAttribute("data-type", currentVideo.type)
     $(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
-
+    setupVue()
     setupPlyr()
   })
 }
@@ -66,6 +65,8 @@ function setupPlyr() {
       if (value) {
         p.seek(value.currentPosition)
       }
+      var cv = _.find(videosData, { id: currentVideo.id })
+      cv.humanizedDuration = humanizeDuration(p.media.duration)
       p.play()
     })
   })
@@ -101,14 +102,13 @@ function setupPlyr() {
   })
 
   player_container.addEventListener('play', function(event) {
-    console.log("SET LAST", currentVideo)
     localforage.setItem("lastVideo", currentVideo)
   })
 }
 
 function setupVue() {
   new Vue({
-    el: '.video-list',
+    el: '#vue',
     data: {
       currentVideo: currentVideo,
       items: videosData
@@ -129,14 +129,10 @@ function setupVue() {
         })
       }
     },
-  })
-
-  new Vue({
-    el: '.psyche-meter',
-    data: {
-      items: videosData
-    },
     computed: {
+      title: function() {
+        return _.find(videos, { id: currentVideo.id }).title
+      },
       psychePercent: function() {
         var total = 0
         var consumed = 0
@@ -150,18 +146,6 @@ function setupVue() {
       }
     }
   })
-
-  new Vue({
-    el: '.video-player',
-    data: {
-      currentVideo: currentVideo
-    },
-    computed: {
-      title: function() {
-        return _.find(videos, { id: currentVideo.id }).title
-      }
-    }
-  })
 }
 
 function loadVideoList() {
@@ -172,7 +156,7 @@ function loadVideoList() {
       var duration = null
       var watched = false
       if (savedData) {
-        humanizedDuration = moment.duration(savedData.duration, "seconds").humanize()
+        humanizedDuration = humanizeDuration(savedData.duration)
         duration = savedData.duration
         currentPosition = savedData.currentPosition
         watched = savedData.watched
@@ -195,7 +179,6 @@ function loadVideoList() {
 function init() {
   retrieveLastVideo()
   loadVideoList()
-  setupVue()
 }
 
 init()

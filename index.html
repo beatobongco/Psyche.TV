@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div id="vue" class="container">
     <div class="psyche-meter">
       <div class="psyched">PSYCHED</div>
       <div class="psyche-progress" style="height: {{ psychePercent }}%">
@@ -32,7 +32,7 @@
           <h2>{{ title }}</h2>
         </a>
       </div>
-      <div class="psyche-machine" data-type="youtube" data-video-id="Ml-rxMwcaf0"></div>
+      <div class="psyche-machine" data-type="{{ currentVideo.type }}" data-video-id="{{ currentVideo.id }}"></div>
     </div>
     <div class="sidebar">
       <div class="video-list">
