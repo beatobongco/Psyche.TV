@@ -66,6 +66,8 @@ function setupPlyr() {
     console.log("READY: Loading", currentVideo.id)
     localforage.getItem(currentVideo.id).then(function(value) {
       var cv = _.find(videosData, { id: currentVideo.id })
+      console.log(cv)
+      cv.duration = p.media.duration
       cv.humanizedDuration = humanizeDuration(p.media.duration)
       if (value) {
         p.seek(value.currentPosition)
