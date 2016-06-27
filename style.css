@@ -39,6 +39,7 @@ body,
   margin-right: auto;
 }
 .container .sidebar .video-card {
+  cursor: pointer;
   display: table;
   position: relative;
   width: 300px;
