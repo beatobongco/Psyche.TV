@@ -205,6 +205,12 @@ body,
 .footer a {
   color: #fff;
 }
+.footer .heart {
+  color: #e85647;
+}
+.show-onload {
+  display: none;
+}
 .plyr__play-large {
   background: rgba(0, 0, 0, 0);
 }

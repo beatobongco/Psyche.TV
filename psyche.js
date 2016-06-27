@@ -33,8 +33,15 @@ function sortVideosData() {
   })
 }
 
+function showOnLoad() {
+  var els = document.querySelectorAll(".show-onload")
+  for (var x = 0; x < els.length; x++) {
+    els[x].style = "display: block"
+  }
+}
+
 function retrieveLastVideo() {
-  //retrieves last video played and instantiates plyr
+  //retrieves last video played and instantiates vue and plyr
   localforage.getItem("lastVideo").then(function(data) {
     if (data) {
       currentVideo.id = data.id
@@ -46,6 +53,7 @@ function retrieveLastVideo() {
     $(".psyche-machine").setAttribute("data-type", currentVideo.type)
     $(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
     setupVue()
+    showOnLoad()
     setupPlyr()
   })
 }

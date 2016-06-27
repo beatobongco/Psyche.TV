@@ -29,14 +29,14 @@
         <a href="#">
           <div class="logo"></div>
           <h1>Psyche.TV</h1>
-          <h2>{{ title }}</h2>
+          <h2 class="show-onload">{{ title }}</h2>
         </a>
       </div>
       <div class="psyche-machine" data-type="{{ currentVideo.type }}" data-video-id="{{ currentVideo.id }}"></div>
     </div>
     <div class="sidebar">
       <div class="video-list">
-        <div class="video-card" v-for="(index, item) in items" v-on:click="loadVideo(item)">
+        <div class="video-card show-onload" v-for="(index, item) in items" v-on:click="loadVideo(item)">
           <div class="watched" v-show="item.watched">WATCHED</div>
           <div class="progress" style="width: {{ Math.round(item.currentPosition / item.duration * 100) }}%"></div>
           <div class="img-container">
@@ -52,7 +52,7 @@
     </div>
   </div>
   <div class="footer">
-    Made with &hearts; by <a href="http://beatobongco.com">Beato Bongco</a>
+    Made with <span class="heart">&hearts;</span> by <a href="http://beatobongco.com">Beato Bongco</a>
   </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.4.2/localforage.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/1.8.2/plyr.js"></script>
