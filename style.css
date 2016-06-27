@@ -13,6 +13,7 @@ html,
 body,
 .container,
 .sidebar {
+  height: 100%;
   background-color: black;
 }
 .container {
@@ -22,15 +23,17 @@ body,
   display: flex;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 .container .sidebar {
-  margin-top: 80px;
+  padding: 80px 10px;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-box-flex: 0;
   -ms-flex: none;
   flex: none;
-  padding: 0 10px;
   background-color: black;
   margin-left: auto;
   margin-right: auto;
@@ -144,6 +147,7 @@ body,
   width: 50px;
   color: #fff;
   margin-top: 80px;
+  margin-bottom: 80px;
   -webkit-box-flex: 0;
   -ms-flex: none;
   flex: none;

@@ -30,6 +30,10 @@ function sortVideosData() {
     if (!a.watched && b.watched) {
       return -1
     }
+
+    if (!a.watched && !b.watched) {
+      return 0
+    }
   })
 }
 
@@ -189,8 +193,8 @@ function loadVideoList() {
         watched: watched,
         thumbnail: thumbnail
       })
-      sortVideosData()
     }.bind(this, videos[x]))
+    sortVideosData()
   }
 }
 
