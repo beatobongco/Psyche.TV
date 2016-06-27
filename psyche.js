@@ -2,6 +2,7 @@ var videosData = []
 var currentVideo = { id: videos[0].id, type: videos[0].type, title: videos[0].title, watched: false }
 var player_container = null
 var p = null
+var psycheVue = null
 
 function $(s) {
   return document.querySelector(s)
@@ -12,6 +13,12 @@ function humanizeDuration(d) {
 }
 
 function sortVideosData() {
+  //save a snap of initial state
+  var order = []
+  for (var x = 0; x < videosData.length; x++) {
+    order.push(videosData[x].id)
+  }
+
   videosData.sort(function(a, b) {
     if (a.watched && b.watched) {
       if (a.title > b.title) {
@@ -20,7 +27,6 @@ function sortVideosData() {
       else if (a.title < b.title) {
         return -1
       }
-      return 0
     }
 
     if (a.watched && !b.watched) {
@@ -31,9 +37,15 @@ function sortVideosData() {
       return -1
     }
 
-    if (!a.watched && !b.watched) {
-      return 0
+    //We need to do this or weird stuff happens
+    if (order.indexOf(a.id) > order.indexOf(b.id)) {
+      return 1
     }
+    else {
+      return -1
+    }
+
+    return 0
   })
 }
 
@@ -114,7 +126,7 @@ function setupPlyr() {
 }
 
 function setupVue() {
-  new Vue({
+  psycheVue = new Vue({
     el: '#vue',
     data: {
       currentVideo: currentVideo,
@@ -156,8 +168,10 @@ function setupVue() {
 }
 
 function loadVideoList() {
+  var sorted = false
   for (var x = 0; x < videos.length; x++) {
-    localforage.getItem(videos[x].id).then(function(video, savedData) {
+    localforage.getItem(videos[x].id).then(function(index, savedData) {
+      var video = videos[index]
       var humanizedDuration = null
       var currentPosition = 0
       var duration = null
@@ -191,8 +205,11 @@ function loadVideoList() {
         watched: watched,
         thumbnail: thumbnail
       })
-    }.bind(this, videos[x]))
-    sortVideosData()
+      if (videosData.length === videos.length && !sorted) {
+        sorted = true
+        sortVideosData()
+      }
+    }.bind(this, x))
   }
 }
 
