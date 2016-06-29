@@ -42,6 +42,12 @@ var videos = [
     description: "First free ascent of the Ewbank Route on Tasmania's Totem Pole."
   },
   {
+    id: "66473915",
+    title: "Jan Hojer Training",
+    type: "vimeo",
+    description: "Jan Hojer's insane strength and training."
+  },
+  {
     id: "RwYirFNSpKo",
     title: "Jimmy Webb and Matt Gentil in Virgin Gorda",
     type: "youtube",
@@ -112,6 +118,18 @@ var videos = [
     title: "Slow Moments - Bouldering World Cup 2015",
     type: "youtube",
     description: ""
+  },
+  {
+    id: "48791021",
+    title: "Chris Sharma - Back in Ceuse",
+    type: "vimeo",
+    description: "Chris Sharma in Ceuse, climbing established lines and bolting a new route."
+  },
+  {
+    id: "lwtdmaYI7WQ",
+    title: "La Sportiva Legends Only 2014",
+    type: "youtube",
+    description: "A bouldering competition featuring legendary climbers: Webb, Ondra, Hojer, Megos, Woods, Kruder."
   },
   {
     id: "170461426",
