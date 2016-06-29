@@ -173,6 +173,8 @@ body,
   padding-top: 10px;
   width: 100%;
   overflow: hidden;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
 }
 .container .psyche-meter .psyche-progress .climber {
   width: 32px;

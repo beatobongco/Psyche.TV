@@ -21,12 +21,8 @@ function sortVideosData() {
 
   videosData.sort(function(a, b) {
     if (a.watched && b.watched) {
-      if (a.title > b.title) {
-        return 1
-      }
-      else if (a.title < b.title) {
-        return -1
-      }
+      // 1 if a is greater, -1 if b. Same as conditionals below
+      return a.title.toUpperCase().localeCompare(b.title.toUpperCase())
     }
 
     if (a.watched && !b.watched) {
