@@ -54,6 +54,12 @@ var videos = [
     description: "Jimmy Webb and Matt Gentile explore beach boulders and FAs on Virgin Gorda in the British Virgin Islands."
   },
   {
+    id: "87907728",
+    title: "Ian Dory - Strong",
+    type: "vimeo",
+    description: "Ian Dory on Paint It Black (V15)"
+  },
+  {
     id: "104492465",
     title: "Climbing Mallorca",
     type: "vimeo",
@@ -120,6 +126,18 @@ var videos = [
     description: ""
   },
   {
+    id: "JCqe96jtExU",
+    title: "Chris Sharma - First Round First Minute",
+    type: "youtube",
+    description: "Christ Sharma sending First Round, First Minute (9b/5.15b) in Margalef, Spain."
+  },
+  {
+    id: "oOz54X3liF0",
+    title: "Chris Sharma - Players",
+    type: "youtube",
+    description: "Spotlight on Sharma's climbing style."
+  },
+  {
     id: "48791021",
     title: "Chris Sharma - Back in Ceuse",
     type: "vimeo",
@@ -130,6 +148,18 @@ var videos = [
     title: "La Sportiva Legends Only 2014",
     type: "youtube",
     description: "A bouldering competition featuring legendary climbers: Webb, Ondra, Hojer, Megos, Woods, Kruder."
+  },
+  {
+    id: "I-OdxfCrXe4",
+    title: "Kevin Jorgeson - The Groove E11",
+    type: "youtube",
+    description: "From the full-length film PROGRESSION."
+  },
+  {
+    id: "8-z5XrhrIoQ",
+    title: "Ashima - Return of the Warrior Ninja Princess",
+    type: "youtube",
+    description: "Ashima Shiraishi, Hueco Tanks, TX, 2012. Featuring Crown of Aragorn (V13) and Barefoot on Sacred Ground (V12) at the age of 10."
   },
   {
     id: "170461426",
@@ -148,5 +178,23 @@ var videos = [
     title: "Virgin Gorda - Paradise Bouldering",
     type: "youtube",
     description: "LT11 explores the beautiful beaches, searches for first ascents in one of the Caribbean's finest climbing destinations."
+  },
+  {
+    id: "34989417",
+    title: "Park Life - Yosemite Bouldering",
+    type: "vimeo",
+    description: "The Louder Than 11 crew gathered from all corners of the country to experience Yosemite Valley bouldering."
+  },
+  {
+    id: "49116780",
+    title: "ABYSS - North America's Highest Bouldering",
+    type: "vimeo",
+    description: "ABYSS provides an insider's look at rock climbing development."
+  },
+  {
+    id: "DfXje1llHfg",
+    title: "Focus Climbing Center - Fight the Pump",
+    type: "youtube",
+    description: "Promo video of Fight The Pump Endurance Route Comp at Focus Climbing Center. Nice show of technique."
   }
 ]
