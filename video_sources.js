@@ -90,8 +90,8 @@ var videos = [
     description: "Piedra Parada, Argentina. Highlight: 200-meter monolith and La Buitrera Canyon."
   },
   {
-    id: "T0KOIf1UC8E",
-    title: "Psicobloc Masters 2013",
+    id: "qKwrTBJDtUM",
+    title: "Psicobloc Masters 2015",
     type: "youtube",
     description: "Climbing comp on a 55 ft. wall overhanging the Olympic swimming pool in Park City, Utah."
   },
@@ -102,8 +102,8 @@ var videos = [
     description: ""
   },
   {
-    id: "qKwrTBJDtUM",
-    title: "Psicobloc Masters 2015",
+    id: "T0KOIf1UC8E",
+    title: "Psicobloc Masters 2013",
     type: "youtube",
     description: ""
   },
@@ -114,14 +114,20 @@ var videos = [
     description: "Udo Neumann compares climbers side by side in the European Bouldering Championships, Innsbruck 2015."
   },
   {
-    id: "SOsT1lEYp7A",
-    title: "Slow Moments - Bouldering World Cup 2014",
+    id: "6j-eEh_oXpE",
+    title: "Slow Moments - Bouldering World Cup 2016",
     type: "youtube",
     description: "Slow motion moments. GoPro Mountain Games, Vail Colorado."
   },
   {
     id: "Y6Ak7GxoVjE",
     title: "Slow Moments - Bouldering World Cup 2015",
+    type: "youtube",
+    description: ""
+  },
+  {
+    id: "SOsT1lEYp7A",
+    title: "Slow Moments - Bouldering World Cup 2014",
     type: "youtube",
     description: ""
   },
