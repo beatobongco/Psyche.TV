@@ -42,6 +42,12 @@ var videos = [
     description: "First free ascent of the Ewbank Route on Tasmania's Totem Pole."
   },
   {
+    id: "vk4YrOtVTLg",
+    title: "Chris Sharma - El Bon Combat",
+    type: "youtube",
+    description: "First ascent of a hard and beautiful 9b/9b+ line at Cova De l'ocell, Barcelona."
+  },
+  {
     id: "66473915",
     title: "Jan Hojer Training",
     type: "vimeo",
