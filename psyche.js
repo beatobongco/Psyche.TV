@@ -119,6 +119,20 @@ function setupPlyr() {
   player_container.addEventListener('play', function(event) {
     localforage.setItem("lastVideo", currentVideo)
   })
+
+  player_container.addEventListener('dblclick', function(event) {
+    p.toggleFullscreen()
+  })
+
+  document.body.onkeyup = function(e) {
+    if(e.keyCode == 32){
+      p.togglePlay()
+      if (e.target == document.body) {
+        e.preventDefault()
+        return false
+      }
+    }
+  }
 }
 
 function setupVue() {
@@ -142,6 +156,7 @@ function setupVue() {
             type: item.type
           }]
         })
+        $('.plyr').scrollIntoView({behavior: "smooth"})
       }
     },
     computed: {
