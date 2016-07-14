@@ -18,6 +18,12 @@ var videos = [
     description: "Alex Honnold free-soloing El Sendero Luminoso (The Shining Path) in El Portrero Chico, Mexico."
   },
   {
+    id: "108093247",
+    title: "Time in the Pines: Welcome to the Future",
+    type: "vimeo",
+    description: "Bouldering porn. Beautifully shot climbing in Hope Valley."
+  },
+  {
     id: "yOQYlheOLy4",
     title: "Chris Sharma - Es Pontas",
     type: "youtube",
@@ -30,6 +36,12 @@ var videos = [
     description: "Daniel Woods sending The Wheel of Life, 9a in the Grampians of Victoria, Australia."
   },
   {
+    id: "112839073",
+    title: "Jimmy Webb- Defying Gravity",
+    type: "vimeo",
+    description: "Jimmy Webb defies gravity on this unreal V15."
+  },
+  {
     id: "2EdpRxSWRPc",
     title: "Jimmy Webb - Rocklands, South Africa",
     type: "youtube",
@@ -40,6 +52,12 @@ var videos = [
     title: "Sonnie Trotter - Totem Pole",
     type: "youtube",
     description: "First free ascent of the Ewbank Route on Tasmania's Totem Pole."
+  },
+  {
+    id: "10818933",
+    title: "Fred Rouhling - The Other Side of the Sky",
+    type: "vimeo",
+    description: "Controversial but beautiful 9A roof. Sick moves."
   },
   {
     id: "vk4YrOtVTLg",
@@ -66,6 +84,12 @@ var videos = [
     description: "Ian Dory on Paint It Black (V15)"
   },
   {
+    id: "OxAZZNkVJ1U",
+    title: "Daniel Woods vs. The Ice Knife Sit",
+    type: "youtube",
+    description: ""
+  },
+  {
     id: "104492465",
     title: "Climbing Mallorca",
     type: "vimeo",
@@ -76,6 +100,12 @@ var videos = [
     title: "La Dura Complete",
     type: "youtube",
     description: "Chris Sharma and Adam Ondra sending La Dura Dura (5.15c / 9b+)."
+  },
+  {
+    id: "45591691",
+    title: "Zombie Roof",
+    type: "vimeo",
+    description: "Will Stanhope free-soloing the Zombie Roof (5.12d) in Squamish, B.C"
   },
   {
     id: "lZT-Ldp55PQ",
