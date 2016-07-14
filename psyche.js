@@ -165,7 +165,7 @@ function setupVue() {
             type: item.type
           }]
         })
-        $('.plyr').scrollIntoView({behavior: "smooth"})
+        window.scrollTo(0, 0);
       }
     },
     computed: {
