@@ -231,6 +231,9 @@ body,
 .plyr__volume--display {
   color: #fff;
 }
+.plyr__controls button:hover {
+  background: #000 !important;
+}
 ::-webkit-scrollbar {
   width: 10px;
   margin-right: 5px;
