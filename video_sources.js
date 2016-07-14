@@ -37,7 +37,7 @@ var videos = [
   },
   {
     id: "112839073",
-    title: "Jimmy Webb- Defying Gravity",
+    title: "Jimmy Webb - Defying Gravity",
     type: "vimeo",
     description: "Jimmy Webb defies gravity on this unreal V15."
   },
