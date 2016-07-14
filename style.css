@@ -224,16 +224,6 @@ body,
 .show-onload {
   display: none;
 }
-.plyr__play-large {
-  background: rgba(0, 0, 0, 0);
-}
-.plyr__progress--played,
-.plyr__volume--display {
-  color: #fff;
-}
-.plyr__controls button:hover {
-  background: #000 !important;
-}
 ::-webkit-scrollbar {
   width: 10px;
   margin-right: 5px;
