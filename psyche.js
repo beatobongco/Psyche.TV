@@ -205,13 +205,13 @@ function loadVideoList() {
         watched = savedData.watched
       }
       if (video.type === "youtube") {
-        thumbnail = "http://img.youtube.com/vi/" + video.id + "/0.jpg"
+        thumbnail = "http://img.youtube.com/vi/" + video.id + "/1.jpg"
       }
       else if (video.type === "vimeo") {
         superagent
           .get("http://vimeo.com/api/v2/video/" + video.id + ".json")
           .end(function(videoID, err, res) {
-            _.find(videosData, { id: videoID }).thumbnail = res.body[0].thumbnail_medium
+            _.find(videosData, { id: videoID }).thumbnail = res.body[0].thumbnail_small
           }.bind(this, video.id))
       }
       videosData.push({

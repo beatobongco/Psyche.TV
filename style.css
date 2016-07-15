@@ -84,9 +84,10 @@ button {
 }
 .container .sidebar .video-card img {
   max-width: 100%;
+  width: 100%;
 }
 .container .sidebar .video-card .info {
-  padding-left: 10px;
+  padding: 0 10px;
   width: 50%;
   display: table-cell;
   vertical-align: middle;
