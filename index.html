@@ -39,8 +39,8 @@
       </div>
     </div>
     <div class="sidebar">
-      <div class="video-list">
-        <div class="video-card show-onload animated fadeInRight" v-for="(index, item) in items" v-on:click="loadVideo(item)">
+      <div class="video-list show-onload animated fadeInRight">
+        <div class="video-card" v-for="(index, item) in items" v-on:click="loadVideo(item)">
           <div class="watched" v-show="item.watched">WATCHED</div>
           <div class="progress" style="width: {{ Math.round(item.currentPosition / item.duration * 100) }}%"></div>
           <div class="img-container">
