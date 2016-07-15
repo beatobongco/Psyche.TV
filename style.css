@@ -16,6 +16,11 @@ body,
   height: 100%;
   background-color: black;
 }
+a,
+button {
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
 .container {
   font-family: Roboto;
   display: -webkit-box;
