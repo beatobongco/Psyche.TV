@@ -54,8 +54,10 @@ button {
   background-color: #212121;
 }
 .container .sidebar .video-card:hover {
-  opacity: .75;
+  opacity: .75 !important;
   cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 .container .sidebar .video-card .progress {
   position: absolute;
