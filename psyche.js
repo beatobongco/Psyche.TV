@@ -81,7 +81,9 @@ function setupPlyr() {
       cv.humanizedDuration = humanizeDuration(p.media.duration)
       if (value) {
         p.seek(value.currentPosition)
-        p.play()
+        if (!isMobile.any) {
+          p.play()
+        }
       }
     })
   })
