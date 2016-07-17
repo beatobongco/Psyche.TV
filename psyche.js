@@ -81,6 +81,7 @@ function setupPlyr() {
       cv.humanizedDuration = humanizeDuration(p.media.duration)
       if (value) {
         p.seek(value.currentPosition)
+        p.play()
       }
     })
   })
