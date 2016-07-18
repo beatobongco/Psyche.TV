@@ -12,6 +12,12 @@ var videos = [
     description: "2010 Bouldering World Cup in Vail, Colorado."
   },
   {
+    id: "0bHF5Yfu_jQ",
+    title: "German Climbing Team Training, Stuntwerk 2014",
+    type: "youtube",
+    description: "German Climbing Team in Cologne's futuristic Stuntwerk bouldering gym."
+  },
+  {
     id: "Phl82D57P58",
     title: "Alex Honnold - El Sendero Luminoso",
     type: "youtube",
