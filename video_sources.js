@@ -78,6 +78,12 @@ var videos = [
     description: "Jan Hojer's insane strength and training."
   },
   {
+    id: "M00evPO6j5w",
+    title: "Magnus Midtbo - Hardest Route in Sognahallen",
+    type: "youtube",
+    description: "A young Magnus leads a long and impressive gym route."
+  },
+  {
     id: "RwYirFNSpKo",
     title: "Jimmy Webb and Matt Gentil in Virgin Gorda",
     type: "youtube",
