@@ -19,7 +19,7 @@ var videos = [
   },
   {
     id: "Phl82D57P58",
-    title: "Alex Honnold - El Sendero Luminoso",
+    title: "Alex Honnold - El Sendero Luminoso (7c)",
     type: "youtube",
     description: "Alex Honnold free-soloing El Sendero Luminoso (The Shining Path) in El Portrero Chico, Mexico."
   },
@@ -31,25 +31,25 @@ var videos = [
   },
   {
     id: "yOQYlheOLy4",
-    title: "Chris Sharma - Es Pontas",
+    title: "Chris Sharma - Es Pontas (9a+)",
     type: "youtube",
     description: "Chris Sharma climbs his King Line, the deep water solo route of Es Pontas (9a+)."
   },
   {
     id: "71856230",
-    title: "Daniel Woods - The Wheel of Life",
+    title: "Daniel Woods - The Wheel of Life (V15)",
     type: "vimeo",
     description: "Daniel Woods sending The Wheel of Life, 9a in the Grampians of Victoria, Australia."
   },
   {
     id: "69170991",
-    title: "James Kassay - Wheel of Life Direct",
+    title: "James Kassay - Wheel of Life Direct (V15)",
     type: "vimeo",
     description: "A more difficult finish to the Wheel of Life."
   },
   {
     id: "112839073",
-    title: "Jimmy Webb - Defying Gravity",
+    title: "Jimmy Webb - Defying Gravity (V15)",
     type: "vimeo",
     description: "Jimmy Webb defies gravity on this unreal V15."
   },
@@ -73,7 +73,7 @@ var videos = [
   },
   {
     id: "IqNfLGjyRQc",
-    title: "Sonnie Trotter - Totem Pole",
+    title: "Sonnie Trotter - Totem Pole (8a)",
     type: "youtube",
     description: "First free ascent of the Ewbank Route on Tasmania's Totem Pole."
   },
@@ -85,7 +85,7 @@ var videos = [
   // },
   {
     id: "vk4YrOtVTLg",
-    title: "Chris Sharma - El Bon Combat",
+    title: "Chris Sharma - El Bon Combat (9b)",
     type: "youtube",
     description: "First ascent of a hard and beautiful 9b/9b+ line at Cova De l'ocell, Barcelona."
   },
@@ -121,13 +121,13 @@ var videos = [
   },
   {
     id: "87907728",
-    title: "Ian Dory - Strong",
+    title: "Ian Dory - Paint It Black (V15)",
     type: "vimeo",
     description: "Ian Dory on Paint It Black (V15)"
   },
   {
     id: "OxAZZNkVJ1U",
-    title: "Daniel Woods vs. The Ice Knife Sit",
+    title: "Daniel Woods - The Ice Knife Sit (V15)",
     type: "youtube",
     description: ""
   },
@@ -139,13 +139,13 @@ var videos = [
   },
   {
     id: "V1P97VVt6_k",
-    title: "La Dura Complete",
+    title: "La Dura Complete (9b+)",
     type: "youtube",
     description: "Chris Sharma and Adam Ondra sending La Dura Dura (5.15c / 9b+)."
   },
   {
     id: "45591691",
-    title: "Will Stanhope - Zombie Roof",
+    title: "Will Stanhope - Zombie Roof (7c)",
     type: "vimeo",
     description: "Will Stanhope free-soloing the Zombie Roof (5.12d) in Squamish, B.C"
   },
@@ -211,7 +211,7 @@ var videos = [
   },
   {
     id: "JCqe96jtExU",
-    title: "Chris Sharma - First Round First Minute",
+    title: "Chris Sharma - First Round First Minute (9b)",
     type: "youtube",
     description: "Christ Sharma sending First Round, First Minute (9b/5.15b) in Margalef, Spain."
   },
@@ -235,7 +235,7 @@ var videos = [
   },
   {
     id: "I-OdxfCrXe4",
-    title: "Kevin Jorgeson - The Groove E11",
+    title: "Kevin Jorgeson - The Groove (E11)",
     type: "youtube",
     description: "From the full-length film PROGRESSION."
   },
