@@ -69,11 +69,14 @@ function retrieveLastVideo() {
   //first check if hash exists
   var hash = window.location.hash
   if (hash) {
-    setCurrentVideo(_.find(videos, {id: hash.split("#")[1] }))
-    setupVue()
-    showOnLoad()
-    setupPlyr()
-    return
+    var vid = _.find(videos, {id: hash.split("#")[1] })
+    if (vid) {
+      setCurrentVideo(vid)
+      setupVue()
+      showOnLoad()
+      setupPlyr()
+      return
+    }
   }
 
   //retrieves last video played and instantiates vue and plyr
@@ -248,6 +251,24 @@ function loadVideoList() {
 function init() {
   retrieveLastVideo()
   loadVideoList()
+  //Don't allow gibberish hashes, revert to old working one or blank
+  window.onhashchange = function(e) {
+    if (e.oldURL === e.newURL || e.newURL.split("#")[1].length === 0) {
+      console.log("LOL NO")
+      return
+    }
+    var newVid = _.find(videos, {id: e.newURL.split("#")[1]})
+
+    if (_.isEmpty(newVid)) {
+      var oldVid = _.find(videos, {id: e.oldURL.split("#")[1]})
+      if (_.isEmpty(oldVid)) {
+        window.location.hash = ""
+      }
+      else {
+        window.location.hash = oldVid.id
+      }
+    }
+  }
 }
 
 init()
