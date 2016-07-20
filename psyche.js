@@ -60,6 +60,8 @@ function setCurrentVideo(vid) {
 
   $(".psyche-machine").setAttribute("data-type", currentVideo.type)
   $(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
+
+  document.title = vid.title + " - Psyche.TV"
 }
 
 function retrieveLastVideo() {
@@ -172,7 +174,8 @@ function setupVue() {
             type: item.type
           }]
         })
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0)
+        document.title = item.title + " - Psyche.TV"
       }
     },
     computed: {
