@@ -62,6 +62,7 @@ function setCurrentVideo(vid) {
   $(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
 
   document.title = vid.title + " - Psyche.TV"
+  window.location.hash = vid.id
 }
 
 function retrieveLastVideo() {
@@ -176,6 +177,7 @@ function setupVue() {
         })
         window.scrollTo(0, 0)
         document.title = item.title + " - Psyche.TV"
+        window.location.hash = item.id
       }
     },
     computed: {
