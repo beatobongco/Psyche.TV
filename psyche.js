@@ -52,18 +52,32 @@ function showOnLoad() {
   }
 }
 
+function setCurrentVideo(vid) {
+  currentVideo.id = vid.id
+  currentVideo.title = vid.title
+  currentVideo.type = vid.type
+  currentVideo.watched = vid.watched
+
+  $(".psyche-machine").setAttribute("data-type", currentVideo.type)
+  $(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
+}
+
 function retrieveLastVideo() {
+  //first check if hash exists
+  var hash = window.location.hash
+  if (hash) {
+    setCurrentVideo(_.find(videos, {id: hash.split("#")[1] }))
+    setupVue()
+    showOnLoad()
+    setupPlyr()
+    return
+  }
+
   //retrieves last video played and instantiates vue and plyr
   localforage.getItem("lastVideo").then(function(data) {
     if (data) {
-      currentVideo.id = data.id
-      currentVideo.title = data.title
-      currentVideo.type = data.type
-      currentVideo.watched = data.watched
+      setCurrentVideo(data)
     }
-
-    $(".psyche-machine").setAttribute("data-type", currentVideo.type)
-    $(".psyche-machine").setAttribute("data-video-id", currentVideo.id)
     setupVue()
     showOnLoad()
     setupPlyr()
