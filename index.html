@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="plyr.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.1/awesomplete.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -27,11 +28,12 @@
     </div>
     <div class="video-player">
       <div class="logo-container">
-        <a href="#">
+        <div class="logo-flex">
           <div class="logo"></div>
           <h1>Psyche.TV</h1>
-          <h2 class="show-onload">{{ title }}</h2>
-        </a>
+          <input class="show-onload searchbar" placeholder="Search for climbers, routes" />
+        </div>
+        <h2 class="show-onload">{{ title }}</h2>
       </div>
       <div class="psyche-machine" data-type="{{ currentVideo.type }}" data-video-id="{{ currentVideo.id }}"></div>
       <div class="footer">
@@ -62,6 +64,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/superagent/2.0.0/superagent.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.0/isMobile.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.1/awesomplete.min.js"></script>
   <script type="text/javascript" src="video_sources.js"></script>
   <script type="text/javascript" src="psyche.js"></script>
 </body>

@@ -101,9 +101,9 @@ function setupPlyr() {
       cv.humanizedDuration = humanizeDuration(p.media.duration)
       if (value) {
         p.seek(value.currentPosition)
-        if (!isMobile.any) {
-          p.play()
-        }
+      }
+      if (!isMobile.any) {
+        p.play()
       }
     })
   })
@@ -248,13 +248,10 @@ function loadVideoList() {
   }
 }
 
-function init() {
-  retrieveLastVideo()
-  loadVideoList()
+function initializeHashValidator() {
   //Don't allow gibberish hashes, revert to old working one or blank
   window.onhashchange = function(e) {
     if (e.oldURL === e.newURL || e.newURL.split("#")[1].length === 0) {
-      console.log("LOL NO")
       return
     }
     var newVid = _.find(videos, {id: e.newURL.split("#")[1]})
@@ -269,6 +266,24 @@ function init() {
       }
     }
   }
+}
+
+function initializeSearchbar() {
+  new Awesomplete($(".searchbar"), {
+    list: _.map(videos, 'title'),
+    autoFirst: true,
+  })
+
+  $(".searchbar").addEventListener("awesomplete-selectcomplete", function(e) {
+    psycheVue.loadVideo(_.find(videosData, {title: e.target.value}))
+  })
+}
+
+function init() {
+  retrieveLastVideo()
+  loadVideoList()
+  initializeSearchbar()
+  initializeHashValidator()
 }
 
 init()

@@ -145,7 +145,7 @@ var videos = [
   },
   {
     id: "45591691",
-    title: "Zombie Roof",
+    title: "Will Stanhope - Zombie Roof",
     type: "vimeo",
     description: "Will Stanhope free-soloing the Zombie Roof (5.12d) in Squamish, B.C"
   },
