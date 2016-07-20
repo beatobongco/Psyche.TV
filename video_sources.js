@@ -42,10 +42,22 @@ var videos = [
     description: "Daniel Woods sending The Wheel of Life, 9a in the Grampians of Victoria, Australia."
   },
   {
+    id: "69170991",
+    title: "James Kassay - Wheel of Life Direct",
+    type: "vimeo",
+    description: "A more difficult finish to the Wheel of Life."
+  },
+  {
     id: "112839073",
     title: "Jimmy Webb - Defying Gravity",
     type: "vimeo",
     description: "Jimmy Webb defies gravity on this unreal V15."
+  },
+  {
+    id: "7VCXhkUbIRE",
+    title: "Jimmy Webb - Warpath (V14)",
+    type: "youtube",
+    description: "Jimmy Webb repeating James Litz's Warpath, a V14 in Idaho."
   },
   {
     id: "2EdpRxSWRPc",
@@ -54,17 +66,23 @@ var videos = [
     description: "Jimmy Webb bouldering in his iconic, powerful style."
   },
   {
+    id: "149599213",
+    title: "Jimmy Webb - The Matriarch (V15)",
+    type: "vimeo",
+    description: "Rocktown, Georgia."
+  },
+  {
     id: "IqNfLGjyRQc",
     title: "Sonnie Trotter - Totem Pole",
     type: "youtube",
     description: "First free ascent of the Ewbank Route on Tasmania's Totem Pole."
   },
-  {
-    id: "10818933",
-    title: "Fred Rouhling - The Other Side of the Sky",
-    type: "vimeo",
-    description: "Controversial but beautiful 9A roof. Sick moves."
-  },
+  // {
+  //   id: "10818933",
+  //   title: "Fred Rouhling - The Other Side of the Sky",
+  //   type: "vimeo",
+  //   description: "Controversial but beautiful 9A roof. Sick moves."
+  // },
   {
     id: "vk4YrOtVTLg",
     title: "Chris Sharma - El Bon Combat",
@@ -76,6 +94,18 @@ var videos = [
     title: "Jan Hojer Training",
     type: "vimeo",
     description: "Jan Hojer's insane strength and training."
+  },
+  {
+    id: "g32aHW_TFq8",
+    title: "Stuntwerk - Circus Maximus",
+    type: "youtube",
+    description: "Amazingly long dynamic gym boulder."
+  },
+  {
+    id: "slvZIYMcRvo",
+    title: "Team GB Bouldering: Training Day",
+    type: "youtube",
+    description: ""
   },
   {
     id: "M00evPO6j5w",
@@ -214,6 +244,12 @@ var videos = [
     title: "Matt Gentile - Pink Lightening Ultra (V13)",
     type: "youtube",
     description: "2015 Roof Rally, held at The Priest Draw in Flagstaff, AZ."
+  },
+  {
+    id: "Sq_HcaYPRw8",
+    title: "23rd Hueco Rock Rodeo - 2016",
+    type: "youtube",
+    description: ""
   },
   {
     id: "8-z5XrhrIoQ",
