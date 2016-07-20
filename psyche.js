@@ -147,7 +147,7 @@ function setupPlyr() {
   })
 
   document.body.onkeyup = function(e) {
-    if(e.keyCode == 32){
+    if(e.keyCode == 32 && e.target.type !== "text"){
       p.togglePlay()
       if (e.target == document.body) {
         e.preventDefault()

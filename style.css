@@ -223,6 +223,9 @@ button {
   background-color: #fff !important;
   color: #000 !important;
 }
+.awesomplete li:hover {
+  background-color: #bdc3c7 !important;
+}
 .awesomplete li[aria-selected="true"] {
   background-color: #bdc3c7 !important;
 }
