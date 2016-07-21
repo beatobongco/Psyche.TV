@@ -265,6 +265,9 @@ function initializeHashValidator() {
         window.location.hash = oldVid.id
       }
     }
+    else {
+      psycheVue.loadVideo(_.find(videosData, {id: newVid.id}))
+    }
   }
 }
 
