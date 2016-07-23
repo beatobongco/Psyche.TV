@@ -280,6 +280,12 @@ function initializeSearchbar() {
   $(".searchbar").addEventListener("awesomplete-selectcomplete", function(e) {
     psycheVue.loadVideo(_.find(videosData, {title: e.target.value}))
   })
+
+  $(".searchbar").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 && !_.find(videosData, {title: event.target.value})) {
+      alert('No results for "' + event.target.value + '"')
+    }
+  })
 }
 
 function init() {
