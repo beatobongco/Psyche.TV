@@ -1,5 +1,11 @@
 var videos = [
   {
+    id: "RWidwSAc57M",
+    title: "Alex Honnold & Felipe Camargo - Getting up Getu",
+    type: "youtube",
+    description: "Getu, China - they attempt one of the longest, steepest roof climbs in the world: Corazón de Ensueño, an 8 pitch 5.14b."
+  },
+  {
     id: "Ml-rxMwcaf0",
     title: "The Insiders",
     type: "youtube",
