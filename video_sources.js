@@ -6,6 +6,12 @@ var videos = [
     description: "Getu, China - they attempt one of the longest, steepest roof climbs in the world: Corazón de Ensueño, an 8 pitch 5.14b."
   },
   {
+    id: "ENba9T05r_8",
+    title: "Bouldering World Cup Innsbruck - Finals 2016",
+    type: "youtube",
+    description: ""
+  },
+  {
     id: "Ml-rxMwcaf0",
     title: "The Insiders",
     type: "youtube",
