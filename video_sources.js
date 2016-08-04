@@ -9,13 +9,19 @@ var videos = [
     id: "4xsKa-dAH8M",
     title: "Tommy Caldwell: The Conquistador",
     type: "youtube",
-    description: "Great Wide Open episode 1. Directed by Jared Leto. celebrates America's National Parks and the incredible adventurers who explore them."
+    description: "Great Wide Open episode 1. Directed by Jared Leto. Celebrates America's National Parks and the incredible adventurers who explore them."
   },
   {
     id: "MLxAVxtpYP0",
     title: "Renan Ozturk: The Dirtbag",
     type: "youtube",
-    description: "Great Wide Open episode 2. Directed by Jared Leto. celebrates America's National Parks and the incredible adventurers who explore them."
+    description: "Great Wide Open episode 2. Directed by Jared Leto. Celebrates America's National Parks and the incredible adventurers who explore them."
+  },
+  {
+    id: "shXpJ8gnk8I",
+    title: "Alex Honnold: The Rockstar",
+    type: "youtube",
+    description: "Great Wide Open episode 3. Directed by Jared Leto. Celebrates America's National Parks and the incredible adventurers who explore them."
   },
   {
     id: "ENba9T05r_8",
