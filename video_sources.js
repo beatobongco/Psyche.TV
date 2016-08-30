@@ -1,5 +1,17 @@
 var videos = [
   {
+    id: "mLpC3BLw_QQ",
+    title: "Exposure Vol. 2: Dmitriy Sharafutdinov",
+    type: "youtube",
+    description: "The Russian athlete's crazy training for World Cup events."
+  },
+  {
+    id: "HaO477TjXus",
+    title: "Sasha DiGiulian",
+    type: "youtube",
+    description: "Great Wide Open episode 1. Directed by Jared Leto. Celebrates America's National Parks and the incredible adventurers who explore them."
+  },
+  {
     id: "RWidwSAc57M",
     title: "Alex Honnold & Felipe Camargo - Getting up Getu",
     type: "youtube",
