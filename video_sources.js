@@ -1,5 +1,17 @@
 var videos = [
   {
+    id: "-TeTejh1ebs",
+    title: "Arnaud Petit - Black Bean (8b trad)",
+    type: "youtube",
+    description: "Arnaud Petit climbing 'Black Bean' 8b in Ceüse a fabulous 65 m route, using his own gear for protection."
+  },
+  {
+    id: "FgjoFv33kKk",
+    title: "Stephanie Bodet - Octogenese (8a+)",
+    type: "youtube",
+    description: "Of the rock I asked for the moon. Climbing a beautiful and extreme slab multi-pitch in Corsica, Stephanie Bodet offers a singular and poetical vision of climbing. "
+  },
+  {
     id: "mLpC3BLw_QQ",
     title: "Exposure Vol. 2: Dmitriy Sharafutdinov",
     type: "youtube",
