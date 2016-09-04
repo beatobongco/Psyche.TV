@@ -1,5 +1,11 @@
 var videos = [
   {
+    id: "179993676",
+    title: "Take Hold - Jason Kehl",
+    type: "vimeo",
+    description: "Motivational video about the climbing lifestyle."
+  },
+  {
     id: "181035215",
     title: "The PsicoRoc Highlight Reel",
     type: "vimeo",
