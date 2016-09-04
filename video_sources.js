@@ -1,5 +1,11 @@
 var videos = [
   {
+    id: "181035215",
+    title: "The PsicoRoc Highlight Reel",
+    type: "vimeo",
+    description: "The first deep-water-solo climbing competition ever to be held on real stone in America."
+  },
+  {
     id: "175837901",
     title: "Hungry Monkeys",
     type: "vimeo",
