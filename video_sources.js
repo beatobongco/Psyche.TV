@@ -1,5 +1,11 @@
 var videos = [
   {
+    id: "175837901",
+    title: "Hungry Monkeys",
+    type: "vimeo",
+    description: "Some awesome 7c - 8a+ climbing in Tonsai, Thailand."
+  },
+  {
     id: "-TeTejh1ebs",
     title: "Arnaud Petit - Black Bean (8b trad)",
     type: "youtube",
