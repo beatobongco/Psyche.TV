@@ -200,6 +200,7 @@ function setupVue() {
 }
 
 function loadVideoList() {
+  var protocol = window.location.protocol
   var sorted = false
   for (var x = 0; x < videos.length; x++) {
     localforage.getItem(videos[x].id).then(function(index, savedData) {
@@ -217,11 +218,11 @@ function loadVideoList() {
         watched = savedData.watched
       }
       if (video.type === "youtube") {
-        thumbnail = "http://img.youtube.com/vi/" + video.id + "/0.jpg"
+        thumbnail = protocol + "//img.youtube.com/vi/" + video.id + "/0.jpg"
       }
       else if (video.type === "vimeo") {
         superagent
-          .get("http://vimeo.com/api/v2/video/" + video.id + ".json")
+          .get(protocol + "//vimeo.com/api/v2/video/" + video.id + ".json")
           .end(function(videoID, err, res) {
             _.find(videosData, { id: videoID }).thumbnail = res.body[0].thumbnail_medium
           }.bind(this, video.id))
