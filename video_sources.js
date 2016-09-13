@@ -1,5 +1,17 @@
 var videos = [
   {
+    id: "s5PUKWJooB4",
+    title: "Chris Sharma trained by Patxi Usobiaga",
+    type: "youtube",
+    description: "Amazing footage of Chris training for probably the world's first 9c."
+  },
+  {
+    id: "Yn2tHcZEnF0",
+    title: "Alex Honnold Climbs Angola",
+    type: "youtube",
+    description: "Honnold and friends navigate landmines and unclimbed rock in South Africa."
+  },
+  {
     id: "179993676",
     title: "Take Hold - Jason Kehl",
     type: "vimeo",
