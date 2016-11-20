@@ -1,5 +1,29 @@
 var videos = [
   {
+    id: "2pSbj6mIFy0",
+    title: "Nalle Hukkataival - 8C/8C+ compilation",
+    type: "youtube",
+    description: "Watch Nalle slay the world's hardest boulder problems."
+  },
+  {
+    id: "WjAmnLFlkbk",
+    title: "North Face Roctrip - Shikoku",
+    type: "youtube",
+    description: "Toru Nakajima, Tomoa Narasaki, and Akiyo Noguchi do hard bouldering in Shikoku, Japan."
+  },
+  {
+    id: "dAFBxEvOqVQ",
+    title: "Tomoa Narasaki - Unleashed",
+    type: "youtube",
+    description: "Japanese powerhouse Tomoa Narasaki tops all 4 World Cup boulder problems in Munich 2016."
+  },
+  {
+    id: "NXe7d4ouRpg",
+    title: "Es Pontas (9a+) second ascent - Jernej Kruder",
+    type: "youtube",
+    description: "Kruder repeats Sharma's king line in Mallorca, Spain."
+  },
+  {
     id: "s5PUKWJooB4",
     title: "Chris Sharma trained by Patxi Usobiaga",
     type: "youtube",
