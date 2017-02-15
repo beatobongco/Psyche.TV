@@ -1,5 +1,23 @@
 var videos = [
   {
+    id: "gbK4MqpFsVc",
+    title: "Adam Ondra - Robin Ud (9b FA)",
+    type: "youtube",
+    description: "Adam Ondra's first ascent of the brutal 9b power endurance route Robin Ud."
+  },
+  {
+    id: "4DfMZ1OPJrM",
+    title: "Daniel Woods - Fantasia V14 FA",
+    type: "youtube",
+    description: ""
+  },
+  {
+    id: "20090713",
+    title: "Jimmy Webb - Fantasia V14",
+    type: "vimeo",
+    description: "Second ascent."
+  },
+  {
     id: "2pSbj6mIFy0",
     title: "Nalle Hukkataival - 8C/8C+ compilation",
     type: "youtube",
