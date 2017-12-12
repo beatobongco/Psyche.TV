@@ -1,5 +1,11 @@
 var videos = [
   {
+    id: "pQBR96lPTvs",
+    title: "Joe Kinder - Bone Tomahawk (5.14d / 9a FA)",
+    type: "youtube",
+    description: "Joe Kinder's 'king line', a super overhanging route of porcelain holds."
+  },
+  {
     id: "299JvE84PEY",
     title: "Ethan Pringle - Howl's Moving Castle (V12/V13)",
     type: "youtube",
