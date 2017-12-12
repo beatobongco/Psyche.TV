@@ -1,5 +1,17 @@
 var videos = [
   {
+    id: "299JvE84PEY",
+    title: "Ethan Pringle - Howl's Moving Castle (V12/V13)",
+    type: "youtube",
+    description: "An amazing boulder up in the clouds."
+  },
+  {
+    id: "367YsIRM3xI",
+    title: "Ethan Pringle - Everything is Karate (5.14 c/d | 8c/c+ FA)",
+    type: "youtube",
+    description: "A 5.14+ route on granite in California. One of the best routes Pringle has ever climbed."
+  },
+  {
     id: "gbK4MqpFsVc",
     title: "Adam Ondra - Robin Ud (9b FA)",
     type: "youtube",
