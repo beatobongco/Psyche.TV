@@ -1,5 +1,11 @@
 var videos = [
   {
+    id: "FS0QJ-MXkOY",
+    title: "Mason Earle - Cobra Crack (5.14)",
+    type: "youtube",
+    description: "Mason Earle battles an 8 year nemesis and one of the hardest trad routes in the world."
+  },
+  {
     id: "pQBR96lPTvs",
     title: "Joe Kinder - Bone Tomahawk (5.14d / 9a FA)",
     type: "youtube",
