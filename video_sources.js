@@ -1,5 +1,11 @@
 var videos = [
   {
+    id: "u9XC1HicXUM",
+    title: "Nathaniel Coleman - Power of the Psych",
+    type: "youtube",
+    description: "Nathaniel Coleman is taking the competition scene by storm and exploring unclimbed areas in the southern deserts of Utah."
+  },
+  {
     id: "FS0QJ-MXkOY",
     title: "Mason Earle - Cobra Crack (5.14)",
     type: "youtube",
