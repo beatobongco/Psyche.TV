@@ -1,5 +1,29 @@
 var videos = [
   {
+    id: 'TzaxtwaZgPI',
+    title: 'Perspective: Dave Graham | EP 4',
+    type: 'youtube',
+    description: ''
+  },
+  {
+    id: 'xxya0fqtk0Y',
+    title: 'Perspective: Michaela Kiersch | EP 3',
+    type: 'youtube',
+    description: ''
+  },
+  {
+    id: '_7RtSqDr5wM',
+    title: 'Perspective: Jon Cardwell | EP 2',
+    type: 'youtube',
+    description: ''
+  },
+  {
+    id: 'skMgjnFR65s',
+    title: 'Perspective: Daniel Woods | EP 1',
+    type: 'youtube',
+    description: ''
+  },
+  {
     id: "u9XC1HicXUM",
     title: "Nathaniel Coleman - Power of the Psych",
     type: "youtube",
